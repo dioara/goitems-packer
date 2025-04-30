@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoItems Packer - Smart Packing Lists</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.svg" type="image/svg+xml"> <!-- Favicon -->
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.svg" alt="GoItems Logo">
+            <!-- <h1>GoItems Packer</h1> --> <!-- Replaced by logo -->
+        </div>
+        <!-- <p>Your smart packing list generator</p> --> <!-- Optional subtitle -->
+    </header>
+
+    <main>
+        <section id="list-generator">
+            <h2>Create Your Packing List</h2>
+            <div class="form-group">
+                <label for="event-category">1. Select Event Category:</label>
+                <select id="event-category" name="event-category" disabled>
+                    <option value="" disabled selected>Loading categories...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="event-type">2. Select Event Type:</label>
+                <select id="event-type" name="event-type" disabled>
+                    <option value="" disabled selected>-- Select Category First --</option>
+                </select>
+            </div>
+            <div class="form-group generate-group button-group">
+                <button id="generate-list" class="button" disabled>Generate List</button>
+            </div>
+        </section>
+
+        <section id="list-controls" style="display: none;">
+            <h2>Your Packing List</h2>
+            
+            <div class="form-group add-item-container">
+                <label for="add-item-input" class="sr-only">Add custom item:</label> <!-- Screen reader only label -->
+                <input type="text" id="add-item-input" placeholder="Add a custom item...">
+                <button id="add-item-button" class="button button-secondary">Add Item</button>
+            </div>
+
+            <ul id="packing-list">
+                <!-- Packing list items will be generated here -->
+            </ul>
+
+            <div class="form-group save-controls">
+                <label for="list-name-input">List Name:</label>
+                <input type="text" id="list-name-input" placeholder="Enter a name to save this list...">
+            </div>
+            <div class="button-group">
+                 <button id="print-list" class="button button-secondary">Print List</button>
+                 <button id="save-list-button" class="button button-success">Save List</button>
+            </div>
+        </section>
+
+        <section id="saved-lists-section">
+            <h3>Saved Lists</h3>
+            <div class="form-group">
+                <label for="saved-lists-select">Load a saved list:</label>
+                <select id="saved-lists-select" disabled>
+                    <option value="" disabled selected>-- No saved lists found --</option>
+                </select>
+            </div>
+            <div class="button-group saved-list-actions">
+                <button id="load-list-button" class="button button-secondary" disabled>Load Selected List</button>
+                <button id="delete-list-button" class="button button-danger" disabled>Delete Selected List</button>
+            </div>
+        </section>
+
+        <section id="saved-templates-section">
+            <h3>Custom Templates</h3>
+            <div class="form-group">
+                <label for="template-name-input">Template Name:</label>
+                <input type="text" id="template-name-input" placeholder="Enter name to save current list as template...">
+            </div>
+            <div class="button-group">
+                <button id="save-template-button" class="button button-success">Save as Template</button>
+            </div>
+            <div class="form-group">
+                <label for="saved-templates-select">Load a template:</label>
+                <select id="saved-templates-select" disabled>
+                    <option value="" disabled selected>-- No saved templates --</option>
+                </select>
+            </div>
+            <div class="button-group saved-template-actions">
+                <button id="load-template-button" class="button button-secondary" disabled>Load Selected Template</button>
+                <button id="delete-template-button" class="button button-danger" disabled>Delete Selected Template</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2025 <a href="https://lampstand.consulting" target="_blank" rel="noopener noreferrer">Lampstand Consulting Ltd</a>. All rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
